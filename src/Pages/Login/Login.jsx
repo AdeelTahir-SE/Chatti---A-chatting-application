@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./Login.css"
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +9,7 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
-
+const navigate =useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -38,8 +39,11 @@ const Login = () => {
       }).then ( async (response) => { 
         let res = await response.text();
         setSuccessMessage(res)});
-      
+      localStorage.setItem("Email",formData.email);
+      localStorage.setItem("Password",formData.password);
+      navigate("/profile");
       setErrors({});
+    
     } else {
       setErrors(formErrors);
       setSuccessMessage("");
@@ -74,9 +78,11 @@ const Login = () => {
           />
           {errors.password && <span className="error">{errors.password}</span>}
         </div>
+        
 
         <button type="submit">Login</button>
       </form>
+      <button className="goback"> go back </button>
       {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
     </div>

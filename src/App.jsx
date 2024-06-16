@@ -7,6 +7,8 @@ import Notifications from './Pages/Notification/Notification';
 import UserProfile from './Pages/UserProfile/UserProfile';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Setting from "./Pages/Setting/Setting";
+import Chatroom from "./Pages/Chatroom/Chatroom";
 import './App.css';
 
 function App() {
@@ -15,13 +17,14 @@ function App() {
       <Header />
       <div className="app-content">
         <Routes>
-          <Route path="/about" element={<Login />} />
-          <Route path="/friends" element={<Register />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/friends" element={<FriendList />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {/* Add more routes as needed */}
+          <Route path="/Setting" element={<Setting/>} />
+          <Route path="/Chatroom" element={<Chatroom />} />
         </Routes>
       </div>
     </Router>

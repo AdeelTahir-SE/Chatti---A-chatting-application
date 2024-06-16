@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Chatroom.css';
 
-const ChatRoom = () => {
+const Chatroom = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
 
@@ -54,4 +54,4 @@ const ChatRoom = () => {
   );
 };
 
-export default ChatRoom;
+export default Chatroom;

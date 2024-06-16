@@ -37,6 +37,7 @@ app.post("/login", async(req,res)=>{
     const User = await user.findOne({Email:email,Password:password})
     User?res.status(200).send("Login successfull"):res.status(401).send("Invalid credentials");
 console.log("Login successfully");
+
   } catch (err) {
     console.error('Error fetching users:', err);
     res.status(500).json({ error: 'Error fetching users' });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Register.css";
-
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -11,7 +11,7 @@ const Register = () => {
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
-
+const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -52,6 +52,9 @@ const Register = () => {
       setSuccessMessage("");
     }
   };
+  const navigatefurther=()=>{
+    navigate("/login")
+  }
 
   return (
     <div className="body">
@@ -108,6 +111,8 @@ const Register = () => {
             {errors.confirmPassword && (
               <span className="error">{errors.confirmPassword}</span>
             )}
+            <p className="loginlink">Already registered wanna login <span className="link" onClick={navigatefurther}>click here</span></p>
+        
           </div>
 
           <button type="submit">Register</button>

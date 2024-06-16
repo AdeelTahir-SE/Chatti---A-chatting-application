@@ -36,4 +36,4 @@ const Setting = () => {
   );
 };
 
-export default Settings;
+export default Setting;

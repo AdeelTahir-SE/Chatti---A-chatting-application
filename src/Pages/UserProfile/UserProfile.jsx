@@ -35,12 +35,12 @@ e.img.src
       </div>
       <form onSubmit={handleSubmit} className="profile-form">
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="name">Name:</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            value={userData.email}
+            type="text"
+            id="name"
+            name="name"
+            value={userData.username}
             onChange={handleInputChange}
             required
           />
