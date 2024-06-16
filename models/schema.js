@@ -1,10 +1,11 @@
 import mongoose from "mongoose"
 const userSchema = new mongoose.Schema({
 Name :String,
-Email:String,
+Email:{type:String,required:true,unique:true},
 Password:String,
 Bio:String,
-Imgurl:{type:String , default:'https://via.placeholder.com/150'}
+Imgurl:{type:String , default:'https://via.placeholder.com/150'},
+chats:{type:Object,default:[]}
 
 })
 

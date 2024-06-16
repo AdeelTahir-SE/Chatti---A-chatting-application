@@ -8,7 +8,9 @@ const app = express();
 const port = 3001;
 app.use(cors());
 app.use(bodyParser.json());
+
 app.post('/', (req, res) => {
+  
   const {name,email,password } = req.body;
 
   const newUser = new user({
@@ -16,6 +18,8 @@ app.post('/', (req, res) => {
     Email: email || 'null',
     Password: password || '',
     Bio: 'null',
+    Imgurl: 'https://via.placeholder.com/150',
+    chats:[]
   });
 
   newUser.save()
@@ -46,6 +50,49 @@ console.log("Login successfully");
 
 
 });
+app.get("/friends", async(req,res)=>{
+  try {
+    const users = await user.find(); // Fetch all users
+    res.json(users); // Send the users as JSON response
+  } catch (err) {
+    console.error('Error fetching users:', err);
+    res.status(500).json({ error: 'Error fetching users' });
+  }
+});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
+
+app.get("/Chatroom", async(req,res)=>{
+  try {
+   const msg =req.body;
+   
+  } catch (err) {
+    console.error('Error fetching users:', err);
+    res.status(500).json({ error: 'Error fetching users' });
+  }
+});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
+
+
+app.get("/friendsmsg", async (req, res) => {
+  try {
+
+    const receiver = await user.findOne(req.body);
+    if (receiver) {
+
+      res.redirect('/Chatroom');
+    } else {
+      res.status(404).json({ error: 'User not found' });
+    }
+  } catch (err) {
+    console.error('Error fetching user:', err);
+    res.status(500).json({ error: 'Error fetching user' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
