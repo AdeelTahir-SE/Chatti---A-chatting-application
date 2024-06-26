@@ -69,10 +69,10 @@ Contributions are welcome! Please fork the repository and submit pull requests f
 
 For questions or feedback, feel free to contact me at [Adeel Tahir](adeeltahir6a@gmail.com).
 
-##Pictures:
+## Pictures:
 ![image](https://github.com/AdeelTahir-SE/Chatti---A-chatting-application/assets/155211674/2ffdcb84-546c-4253-9ea9-39ac5e967773)
 ![image](https://github.com/AdeelTahir-SE/Chatti---A-chatting-application/assets/155211674/df114784-5fbc-42fc-b55c-207a5296d740)
-![Uploading image.png…]()
+
 
 
 
