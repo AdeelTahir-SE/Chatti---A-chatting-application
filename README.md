@@ -58,9 +58,7 @@ npm run dev
 
 Contributions are welcome! Please fork the repository and submit pull requests for new features, bug fixes, or improvements.
 
-## License 📄
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 ## Acknowledgements 🙏
 - [MongoDB](https://www.mongodb.com/) for the database management.
